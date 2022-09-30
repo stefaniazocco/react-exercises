@@ -9,5 +9,5 @@ export class App extends React.Component{
 }
 
 Welcome.defaultProps = {
-    name: "Stefania",
+    name: <strong>Stefania</strong>,
 }
