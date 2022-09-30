@@ -1,10 +1,15 @@
 import React from "react"
+import { Counter } from "./Counter"
 import { Hello } from "./Hello"
 import { Welcome } from "./Welcome"
 
 export class App extends React.Component{
     render() {
-        return <div><Hello /><Welcome age= {29} name="John"/></div>
+        return  <div>
+                    <Hello />
+                    <Welcome age= {29} name="John"/>
+                    <Counter />
+                </div>
     }
 }
 
