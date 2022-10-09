@@ -16,6 +16,7 @@ export class TodoList extends React.Component{
         const value = event.target.value 
 
         this.setState({
+            input: event.target.value,
             newitem: value
         })
     }
@@ -28,6 +29,9 @@ export class TodoList extends React.Component{
         })
 
         this.state.items.push(this.state.newitem)
+        this.setState({
+            input : ""
+        })
     }
 
 
