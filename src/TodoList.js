@@ -33,6 +33,11 @@ export class TodoList extends React.Component{
             input : ""
         })
     }
+    handleListReset = () => {
+        this.setState({
+            items: []
+        })
+    }
 
 
     render(){
@@ -47,6 +52,7 @@ export class TodoList extends React.Component{
                     />
                 </label>
                 <button onClick={this.handleFormSubmit} disabled={!this.state.newitem}>ADD COLOR</button>
+                <button onClick={this.handleListReset}>RESET LIST</button>
                 
                 <ul>
                     {this.state.items.map((todo, index) => (
