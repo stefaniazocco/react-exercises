@@ -36,11 +36,15 @@ export class Login extends React.Component{
     }
 
     render() {
+        const MyStyle = {
+            color: "black",
+            backgroundColor: this.state.password.length >= 8 ? "green" : "red"
+        }
         return  <div>
                     <input name="username" value={this.state.username} onChange={this.handleInputChange} />
                     <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
                     <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
-                    <button disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
+                    <button style= {MyStyle} disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
                     <button onClick={this.onReset}>Reset</button>
                 </div>
     }
