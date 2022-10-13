@@ -41,7 +41,7 @@ export class TodoList extends React.Component{
     removeItem = (color) => {
         this.setState((state) => {
             return {
-                items: state.color = state.items.filter((item) => { return item !== color })
+                items: color = state.items.filter((item) => { return item !== color })
             }
 
         })
