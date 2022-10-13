@@ -38,12 +38,12 @@ export class TodoList extends React.Component{
             items: []
         })
     }
-    removeItem = (index) => {
-        //console.log(event)
-        let newArray = [...this.state.items]
-        newArray.splice(index, 1)
-        this.setState({
-            items : newArray
+    removeItem = (color) => {
+        this.setState((state) => {
+            return {
+                items: state.color = state.items.filter((item) => { return item !== color })
+            }
+
         })
     }
 
@@ -61,14 +61,10 @@ export class TodoList extends React.Component{
                 <button onClick={this.handleFormSubmit} disabled={!this.state.newitem}>ADD COLOR</button>
                 <button onClick={this.handleListReset}>RESET LIST</button>
                 
-                <ul>
-                    {this.state.items.map((todo, index) => (
-                        <li key={index}>
-                            {todo}
-                            <button key= {index} onClick={this.removeItem.bind(this, index)}>remove</button>
-                        </li>
-                    ))}
-                </ul>
+
+                <div>
+                    {this.props.render(this.state.items, this.removeItem)}
+                </div>
             </div>
         )
     }
