@@ -1,6 +1,4 @@
-export function Sum(props) {
-    const numbers = props.numbers
-    console.log(numbers)
+export function Sum({numbers= [1, 2, 3, 4, 5, 6]}) {
     let result = numbers.reduce((sum, current) => sum + current, 0)
 
     return (
