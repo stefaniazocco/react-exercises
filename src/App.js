@@ -4,6 +4,7 @@ import { Container } from "./Container"
 import { TodoList } from "./TodoList"
 import { LanguageComponent} from "./LanguageContext"
 import { InteractiveWelcome } from "./InteractiveWelcome"
+import { Sum } from "./Sum"
 
 
 
@@ -27,6 +28,8 @@ export class App extends React.Component{
                         } />
                     </Container>
                     <LanguageComponent />
+
+                    <Sum numbers= {[1, 2, 3, 4, 5, 6]} />
                     
                 </div>
     }
