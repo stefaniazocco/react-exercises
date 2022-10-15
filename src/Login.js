@@ -1,51 +1,61 @@
-import React from "react"
+import React, { useState } from "react"
 
 
-export class Login extends React.Component{
-    state= {
+export function Login(){
+
+    const [data, setData] = useState({
         username: "",
         password: "",
         remember: false,
-        disabled : true
-    }
-    handleInputChange = (event) => {
-        const value = event.target.value
-        const name = event.target.name
-        const type = event.target.type
-        const checked = event.target.checked
-        this.setState({
-            [name] : type === "checkbox" ? checked : value
+        disabled: true
+    })
+
+    const handleInputChange = (event) => {
+        const {name, type, value, checked} = event.target
+
+        setData((data) => {
+            return {
+                ...data,
+                [name]: type === "checkbox" ? checked : value
+            }
         })
     }
     
-    onLogin = (event) => {
-        console.log(event)
-        const verify = event.target.disabled
-        this.setState({
-            disabled : verify
-        })
-        console.log(verify)
-    }
-
-    onReset = () => {
-        this.setState({
-            username: "",
-            password: "",
-            remember: false
+    const onLogin = (event) => {
+        console.log(data.username, data.password, data.remember)
+        setData((data) => {
+            return {
+                ...data,
+                username: "",
+                password: "",
+                remember: false
+            }
         })
     }
 
-    render() {
+    const onReset = () => {
+        setData((data) => {
+            return{
+                ...data,
+                username: "",
+                password: "",
+                remember: false
+            }
+
+        })
+    }
+
+    
         const MyStyle = {
             color: "black",
-            backgroundColor: this.state.password.length >= 8 ? "green" : "red"
+            backgroundColor: data.password.length >= 8 ? "green" : "red"
         }
         return  <div>
-                    <input name="username" value={this.state.username} onChange={this.handleInputChange} />
-                    <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
-                    <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handleInputChange} />
-                    <button style= {MyStyle} disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
-                    <button onClick={this.onReset}>Reset</button>
+                    <input name="username" value={data.username} onChange={handleInputChange} />
+                    <input name="password" type="password" value={data.password} onChange={handleInputChange} />
+                    <input name="remember" type="checkbox" checked={data.remember} onChange={handleInputChange} />
+                    <button style={MyStyle} disabled={!data.username || !data.password} onClick={onLogin}>Login</button>
+                    <button onClick={onReset}>Reset</button>
                 </div>
-    }
+    
 }
