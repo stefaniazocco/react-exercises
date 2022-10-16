@@ -29,7 +29,9 @@ export class App extends React.Component{
                         } />
                     </Container>
                     <LanguageComponent />
-                    <ClickCounter />
+                    <ClickCounter onCounterChange = {(counter)=> {
+                        return console.log("The counter is now" + counter)
+                    }}/>
                     <Sum />
                     
                 </div>
