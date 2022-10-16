@@ -6,6 +6,7 @@ import { LanguageComponent} from "./LanguageContext"
 import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Sum } from "./Sum"
 import { ClickCounter } from "./ClickCounter"
+import { Counter } from "./Counter"
 
 
 
@@ -33,6 +34,7 @@ export class App extends React.Component{
                         return console.log("The counter is now" + counter)
                     }}/>
                     <Sum />
+                    <Counter initialValue={0} />
                     
                 </div>
     }
