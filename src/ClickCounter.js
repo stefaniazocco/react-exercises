@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function ClickCounter(props, {initial = 0}) {
     let [counter, setCounter] = useState(initial)
@@ -6,8 +6,10 @@ export function ClickCounter(props, {initial = 0}) {
     const countEvents= () => {
         setCounter(counter += 1)
     }
+    useEffect(() => {
+        props.onCounterChange(counter)
+    })
     
-    props.onCounterChange(counter)
     
     
     return (<>    
