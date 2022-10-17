@@ -7,6 +7,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome"
 import { Sum } from "./Sum"
 import { ClickCounter } from "./ClickCounter"
 import { Counter } from "./Counter"
+import { GithubUser } from "./GithubUser"
 
 
 
@@ -35,6 +36,7 @@ export class App extends React.Component{
                     }}/>
                     <Sum />
                     <Counter initialValue={0} />
+                    <GithubUser username="stefaniazocco" />
                     
                 </div>
     }
