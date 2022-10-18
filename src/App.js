@@ -9,6 +9,7 @@ import { ClickCounter } from "./ClickCounter"
 import { Counter } from "./Counter"
 import { GithubUser } from "./GithubUser"
 import { GithubUserList } from "./GithubUserList"
+import { CustomCounter } from "./useCounter"
 
 
 
@@ -38,8 +39,8 @@ export class App extends React.Component{
                     <Sum />
                     <Counter initialValue={0} />
                     <GithubUser username="stefaniazocco" />
-
                     <GithubUserList />
+                    <CustomCounter />
                     
                 </div>
     }
