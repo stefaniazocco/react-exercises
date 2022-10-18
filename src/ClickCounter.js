@@ -8,7 +8,7 @@ export function ClickCounter(props, {initial = 0}) {
     }
     useEffect(() => {
         props.onCounterChange(counter)
-    })
+    }, [counter, props])
     
     
     
