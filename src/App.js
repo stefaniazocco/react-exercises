@@ -10,6 +10,7 @@ import { Counter } from "./Counter"
 import { GithubUser } from "./GithubUser"
 import { GithubUserList } from "./GithubUserList"
 import { CustomCounter } from "./useCounter"
+import { CustomLogin } from "./useForm"
 
 
 
@@ -41,6 +42,7 @@ export class App extends React.Component{
                     <GithubUser username="stefaniazocco" />
                     <GithubUserList />
                     <CustomCounter />
+                    <CustomLogin />
                     
                 </div>
     }
