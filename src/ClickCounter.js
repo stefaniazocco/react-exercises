@@ -9,8 +9,7 @@ export function ClickCounter(props, {initial = 0}) {
     useEffect(() => {
         props.onCounterChange(counter)
     }, [counter, props])
-    
-    
+        
     
     return (<>    
         <h1>You clicked {counter} times</h1>
