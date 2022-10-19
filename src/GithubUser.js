@@ -31,7 +31,7 @@ function useGithubUser(username){
         data: data,
         loading: loading,
         error: error,
-        fetchUser: fetchGithubUser(username)
+        fetchUser: fetchGithubUser
     }
 }
 
