@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export function GithubUser({username}){
+function useGithubUser(username){
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -26,6 +26,17 @@ export function GithubUser({username}){
     useEffect(() => {
         fetchGithubUser(username)
     }, [username])
+
+    return{
+        data: data,
+        loading: loading,
+        error: error,
+    }
+}
+
+export function GithubUser({username}){
+
+    const {data, loading, error} = useGithubUser(username)
     
     return <div>
         {loading && <h1>Loading ...</h1>}
