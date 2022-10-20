@@ -2,7 +2,7 @@ import { LanguageContext } from "./LanguageContext"
 
 const Strings = {
     en: {
-        HELLO : "Hello, this is the English verision"
+        HELLO : "Hello, this is the English version"
     },
     it: {
         HELLO : "Ciao, questa è la versione italiana"
