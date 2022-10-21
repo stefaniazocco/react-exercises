@@ -4,19 +4,22 @@ export function CarDetails({initialData}) {
     const modelRef = useRef()
     const yearRef = useRef()
     const colorRef = useRef()
+
     const [model, setModel] = useState('')
     const [year, setYear] = useState('')
     const [color, setColor] = useState('')
+
     function modelHandler() {
         setModel(modelRef.current.value)
     }
+
     function yearHandler() {
         setYear(yearRef.current.value)
     }
+    
     function colorHandler() {
         setColor(colorRef.current.value)
     }
-
 
     function handleFormReset(e) {
         e.preventDefault()
@@ -25,7 +28,6 @@ export function CarDetails({initialData}) {
         colorRef.current.value = initialData.color;
         console.log(model, year, color)
     }
-
 
     return (
         <form onSubmit={handleFormReset}>
