@@ -13,14 +13,18 @@ import { CustomCounter } from "./useCounter"
 import { CustomLogin } from "./useForm"
 import { CarDetails } from "./CarDetails"
 import { FilteredList } from "./FilteredList"
-
+import {Routes, Route} from "react-router-dom"
+import { Welcome } from "./Welcome"
 
 
 export class App extends React.Component{
 
     render() {
         return  <div>
-                    <InteractiveWelcome />
+                    <Routes>
+                        <Route path="/" element={<Welcome name="Stefania" />} />
+                    </Routes>
+                    {/* <InteractiveWelcome />
                     <Login />
                     <Container title="this is my title">
                         <TodoList render = { (items, removeItem) => {
@@ -46,7 +50,7 @@ export class App extends React.Component{
                     <CustomCounter />
                     <CustomLogin />
                     <CarDetails initialData={{model: "jeep", year: "2020", color: "black"}}/>
-                    <FilteredList />
+                    <FilteredList /> */}
 
                     
                 </div>
