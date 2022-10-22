@@ -12,6 +12,7 @@ import { GithubUserList } from "./GithubUserList"
 import { CustomCounter } from "./useCounter"
 import { CustomLogin } from "./useForm"
 import { CarDetails } from "./CarDetails"
+import { FilteredList } from "./FilteredList"
 
 
 
@@ -45,6 +46,8 @@ export class App extends React.Component{
                     <CustomCounter />
                     <CustomLogin />
                     <CarDetails initialData={{model: "jeep", year: "2020", color: "black"}}/>
+                    <FilteredList />
+
                     
                 </div>
     }
