@@ -23,6 +23,7 @@ export class App extends React.Component{
         return  <div>
                     <Routes>
                         <Route path="/" element={<Welcome name="Stefania" />} />
+                        <Route path="/counter" element={<Counter />} />
                     </Routes>
                     {/* <InteractiveWelcome />
                     <Login />
