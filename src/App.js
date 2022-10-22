@@ -15,15 +15,19 @@ import { CarDetails } from "./CarDetails"
 import { FilteredList } from "./FilteredList"
 import {Routes, Route} from "react-router-dom"
 import { Welcome } from "./Welcome"
+import { ShowGithubUser } from "./ShowGithubUser"
 
 
 export class App extends React.Component{
+   
 
     render() {
         return  <div>
                     <Routes>
                         <Route path="/" element={<Welcome name="Stefania" />} />
                         <Route path="/counter" element={<Counter />} />
+                        <Route path="/users/:username" element={<ShowGithubUser />}> 
+                        </Route>
                     </Routes>
                     {/* <InteractiveWelcome />
                     <Login />
