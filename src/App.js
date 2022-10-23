@@ -13,7 +13,7 @@ import { CustomCounter } from "./useCounter"
 import { CustomLogin } from "./useForm"
 import { CarDetails } from "./CarDetails"
 import { FilteredList } from "./FilteredList"
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
 import { Welcome } from "./Welcome"
 import { ShowGithubUser } from "./ShowGithubUser"
 
@@ -23,6 +23,9 @@ export class App extends React.Component{
 
     render() {
         return  <div>
+                    <Link to="./">Home</Link>
+                    <Link to="./counter">Counter</Link>
+                    <Link to="./users/stefaniazocco">User</Link>
                     <Routes>
                         <Route path="/" element={<Welcome name="Stefania" />} />
                         <Route path="/counter" element={<Counter />} />
