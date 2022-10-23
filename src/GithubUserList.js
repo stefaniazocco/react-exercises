@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link, Outlet } from "react-router-dom"
 import { GithubUser } from "./GithubUser"
 
 export function GithubUserList() {
@@ -28,7 +29,10 @@ export function GithubUserList() {
             <button onClick={handleButton}>search</button>
             <div>
             {array.map((user, index) => (
-                    <GithubUser key={index} username={user}/>
+                <>
+                    <Link to={user} key={index} user={user}>{user}</Link>
+                    <Outlet />
+                </>
                 ))}
             </div>
 

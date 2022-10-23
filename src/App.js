@@ -24,15 +24,18 @@ export class App extends React.Component{
     render() {
         return  <div>
                     <nav style={{display: "flex", gap: 30, fontSize: 26}}>
-                        <Link to="./" style={{textDecoration: 'none'}}><h2 style={{color: "teal", fontFamily: "fantasy"}}>HOME</h2></Link>
-                        <Link to="./counter" style={{textDecoration: 'none'}}><h2 style={{color: "petrol", fontFamily: "fantasy"}}>COUNTER</h2></Link>
-                        <Link to="./users/stefaniazocco" style={{textDecoration: 'none'}}><h2 style={{color: "#D90368", fontFamily: "fantasy"}}>USER</h2></Link>
+                        <Link to="/" style={{textDecoration: 'none'}}><h2 style={{color: "teal", fontFamily: "fantasy"}}>HOME</h2></Link>
+                        <Link to="/counter" style={{textDecoration: 'none'}}><h2 style={{color: "petrol", fontFamily: "fantasy"}}>COUNTER</h2></Link>
+                        <Link to="/users" style={{textDecoration: 'none'}}><h2 style={{color: "#D90368", fontFamily: "fantasy"}}>USERS</h2></Link>
                     </nav>
                     <Routes>
                         <Route path="/" element={<Welcome name="Stefania" />} />
                         <Route path="/counter" element={<Counter />} />
-                        <Route path="/users/:username" element={<ShowGithubUser />} /> 
+                        {/* <Route path="/users/:username" element={<ShowGithubUser />} />  */}
                         <Route path="*" element={<div><h1>Not found</h1></div>} />
+                        <Route path="/users" element={<GithubUserList />}>
+                                <Route path=":username" element={<ShowGithubUser />} />
+                        </Route>
                         
                     </Routes>
                     {/* <InteractiveWelcome />
