@@ -13,7 +13,7 @@ import { CustomCounter } from "./useCounter"
 import { CustomLogin } from "./useForm"
 import { CarDetails } from "./CarDetails"
 import { FilteredList } from "./FilteredList"
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
 import { Welcome } from "./Welcome"
 import { ShowGithubUser } from "./ShowGithubUser"
 
@@ -23,6 +23,11 @@ export class App extends React.Component{
 
     render() {
         return  <div>
+                    <nav style={{display: "flex", gap: 30, fontSize: 26}}>
+                        <Link to="./" style={{textDecoration: 'none'}}><h2 style={{color: "teal", fontFamily: "fantasy"}}>HOME</h2></Link>
+                        <Link to="./counter" style={{textDecoration: 'none'}}><h2 style={{color: "petrol", fontFamily: "fantasy"}}>COUNTER</h2></Link>
+                        <Link to="./users/stefaniazocco" style={{textDecoration: 'none'}}><h2 style={{color: "#D90368", fontFamily: "fantasy"}}>USER</h2></Link>
+                    </nav>
                     <Routes>
                         <Route path="/" element={<Welcome name="Stefania" />} />
                         <Route path="/counter" element={<Counter />} />
