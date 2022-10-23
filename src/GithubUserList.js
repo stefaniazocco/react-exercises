@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
 import { GithubUser } from "./GithubUser"
+import { ShowGithubUser } from "./ShowGithubUser"
 
 export function GithubUserList() {
 
@@ -30,6 +31,7 @@ export function GithubUserList() {
             <div>
             {array.map((user, index) => (
                 <>
+                    
                     <Link to={user} key={index} user={user}>{user}</Link>
                     <Outlet />
                 </>
