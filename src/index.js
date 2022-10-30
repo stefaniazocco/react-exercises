@@ -20,9 +20,9 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 
-// store.dispatch(incrementCounter(5))
-// store.dispatch(decrementCounter(2))
-// store.dispatch(reset())
+store.dispatch(incrementCounter(5))
+store.dispatch(decrementCounter(2))
+store.dispatch(reset())
 
 store.dispatch(addTodo(1, "feed the panda", false))
 store.dispatch(editTodo(1, "feed the panda", true))
